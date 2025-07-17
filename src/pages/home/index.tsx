@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 
-const App = () => {
+const Home = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -26,4 +26,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

@@ -6,7 +6,11 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ title }) => {
-  return <div>Comp</div>;
+  if (title === undefined) {
+    return <></>;
+  }
+
+  return <div>{title}</div>;
 };
 
 export default Search;
