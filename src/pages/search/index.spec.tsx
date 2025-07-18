@@ -11,6 +11,12 @@ describe("Search comp test", () => {
   it("render title", () => {
     render(<Search title="title" />);
     const element = screen.getByText(/title/i);
-    expect(element).toBeDefined();
+    expect(element).toBeInTheDocument();
+  });
+
+  it("calls onMount callback in useEffect", () => {
+    const mockOnMount = jest.fn();
+    render(<Search title="Test" onMount={mockOnMount} />);
+    expect(mockOnMount).toHaveBeenCalledTimes(1);
   });
 });

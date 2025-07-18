@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 
 interface SearchProps {
   title?: string;
+  onMount?: () => void;
 }
 
-const Search: React.FC<SearchProps> = ({ title }) => {
+const Search: React.FC<SearchProps> = ({ title, onMount }) => {
+  useEffect(() => {
+    onMount?.();
+  }, [onMount]);
+
   if (title === undefined) {
     return <></>;
   }
